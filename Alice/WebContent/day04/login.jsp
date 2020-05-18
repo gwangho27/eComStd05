@@ -86,11 +86,8 @@
 			$('#frm').attr('action','./LoginProc.cls2');
 			$('#frm').submit();
 		});
-		
-		<% String sid = (String)session.getAttribute("SID"); %>
-		
-		// 로그인 여부에 따른 처리 
-		var sid = '<%=sid %>';
+
+		// 로그인 여부에 따른 처리
 		if(sid != 'null' && sid.length != 0 ) {
 			$('#loginWin').css('display','none');
 			$('#msg').html(sid);
