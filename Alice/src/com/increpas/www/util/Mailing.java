@@ -5,9 +5,9 @@ import java.util.Properties;
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.mail.*;
 /**
  * 이 클래스는 메일을 보내기 위한 코어 함수를 가지고 있는 클래스이다.
  * @author	박광호
@@ -20,7 +20,7 @@ public class Mailing {
 		Properties props = new Properties();
 		// 프로퍼티스 값에 SMTP 서버 호스트 지정
 		props.put("mail.smtp.host","smtp.gmail.com"); // gmail SMTP 서비스 주소(호스트)
-		props.put("mail.smtp.port",465); // gmail 서비스 포트 설정
+		props.put("mail.smtp.port","465"); // gmail 서비스 포트 설정
 		props.put("mail.smtp.auth","true"); 
 		props.put("mail.smtp.ssl.enable","true");
 		props.put("mail.smtp.ssl.trust","smtp.gmail.com");

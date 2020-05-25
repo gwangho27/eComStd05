@@ -78,3 +78,12 @@ html, body {
 .pdh-10 {
 	padding: 0px 10px;
 }
+.pdtb-10 {
+	padding: 10px 0px;
+}
+.va-middle {
+	vertical-align: text-top;
+}
+.wd-80p {
+	width:70%;
+}

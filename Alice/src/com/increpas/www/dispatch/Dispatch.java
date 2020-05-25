@@ -2,6 +2,7 @@ package com.increpas.www.dispatch;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
@@ -94,8 +95,19 @@ public class Dispatch extends HttpServlet {
       
       req.setAttribute("isRedirect", false);
       String view = doCon.exec(req, resp);
-	  boolean bool = (boolean)req.getAttribute("isRedirect");
-	  if(bool) {
+      
+	  Boolean bool ;
+	  try {
+		   bool = (boolean)req.getAttribute("isRedirect");
+	  } catch(Exception e) {
+		   bool = null;
+	  }
+	  if(bool == null) {
+		  PrintWriter pw = resp.getWriter();
+		  try {
+			  pw.println(view);
+		  } catch(Exception e) {}
+	  }else if(bool) {
 		  resp.sendRedirect(view);
 	  } else {		  
 		  try {
